@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Products | Konabi</title>
+    <link rel="stylesheet" href="css/main.css" />
+    <script
+      src="https://kit.fontawesome.com/fb89be9943.js"
+      crossorigin="anonymous"
+    ></script>
+  </head>
+  <body class="relative container mx-auto">
+    <!-- Header -->
+    <header class="container flex justify-between mb-20 px-4 py-2 pt-4">
+      <a href="index.html">
+        <img class="w-10 hover:opacity-90" src="img/logo.png" alt="logo" />
+      </a>
+      <nav class="flex items-center text-slate-700 text-xs font-medium">
+        <ul class="hidden sm:flex">
+          <li><a class="mr-6 hover:text-slate-600" href="index.html">Home</a></li>
+          <li><a class="mr-6 hover:text-slate-600" href="services.html">Services</a></li>
+          <li><a class="mr-6 hover:text-slate-600" href="products.html">Products</a></li>
+        </ul>
+        <a
+          href="mailto:info@konabisolutions.com"
+          class="rounded-full border border-slate-700 px-4 py-2 hover:bg-slate-700 hover:text-white transition-all duration-200 ease-in-out"
+        >
+          Contact Us
+        </a>
+      </nav>
+    </header>
+
+    <!-- Products Hero -->
+    <section class="px-4 mb-20 container text-center">
+      <h1 class="font-bold text-5xl text-slate-800 mb-6">Our <span class="text-teal-600">Products</span></h1>
+      <p class="text-slate-500 max-w-2xl mx-auto">
+        Konabi’s products are pre-built, ready-to-deploy solutions designed to
+        accelerate your analytics and automation journey with minimal setup.
+      </p>
+    </section>
+
+    <!-- Products Grid -->
+    <section class="container grid gap-8 sm:grid-cols-2 lg:grid-cols-3 px-4 mb-20">
+      <div class="p-6 bg-slate-200 rounded-xl shadow-md hover:opacity-90">
+        <h3 class="font-bold text-xl mb-2 text-teal-600">Audit Issue Tracker</h3>
+        <p class="text-slate-600 text-sm">
+          A Power BI solution for tracking, aging, and monitoring audit issues
+          across your organization.
+        </p>
+      </div>
+      <div class="p-6 bg-slate-200 rounded-xl shadow-md hover:opacity-90">
+        <h3 class="font-bold text-xl mb-2 text-teal-600">Risk Coverage Dashboard</h3>
+        <p class="text-slate-600 text-sm">
+          A finance and audit-focused dashboard providing real-time visibility
+          into risk coverage across business processes.
+        </p>
+      </div>
+      <div class="p-6 bg-slate-200 rounded-xl shadow-md hover:opacity-90">
+        <h3 class="font-bold text-xl mb-2 text-teal-600">Walkthrough Wizard</h3>
+        <p class="text-slate-600 text-sm">
+          An AI-driven assistant that helps auditors and business users complete
+          walkthroughs quickly and consistently.
+        </p>
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="px-4 py-7 text-slate-600 text-xs text-center">
+      <hr class="opacity-40 pb-7" />
+      <p>&copy; <span id="footerDate"></span> Konabi Solutions</p>
+    </footer>
+
+    <script>
+      document.getElementById("footerDate").innerHTML =
+        new Date().getFullYear();
+    </script>
+  </body>
+</html>

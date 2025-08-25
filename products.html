@@ -10,65 +10,68 @@
       crossorigin="anonymous"
     ></script>
   </head>
+
   <body class="relative container mx-auto">
-    <!-- Header -->
-    <header class="container flex justify-between mb-20 px-4 py-2 pt-4">
-      <a href="index.html">
-        <img class="w-10 hover:opacity-90" src="img/logo.png" alt="logo" />
-      </a>
-      <nav class="flex items-center text-slate-700 text-xs font-medium">
-        <ul class="hidden sm:flex">
-          <li><a class="mr-6 hover:text-slate-600" href="index.html">Home</a></li>
-          <li><a class="mr-6 hover:text-slate-600" href="services.html">Services</a></li>
-          <li><a class="mr-6 hover:text-slate-600" href="products.html">Products</a></li>
-        </ul>
-        <a
-          href="mailto:info@konabisolutions.com"
-          class="rounded-full border border-slate-700 px-4 py-2 hover:bg-slate-700 hover:text-white transition-all duration-200 ease-in-out"
-        >
-          Contact Us
-        </a>
-      </nav>
-    </header>
+  <!-- Header -->
+  <header class="container flex justify-between items-center mb-20 px-4 py-2 pt-4">
+    <!-- Logo + Company Name -->
+    <a href="index.html" class="flex items-center space-x-2">
+      <img class="w-10 hover:opacity-90" src="img/logo.png" alt="logo" />
+      <h1 class="text-2xl font-bold">
+        <span class="text-black">kona</span><span class="text-teal-600">bi</span>
+      </h1>
+    </a>
+  </header>
 
     <!-- Products Hero -->
-    <section class="px-4 mb-20 container text-center">
-      <h1 class="font-bold text-5xl text-slate-800 mb-6">Our <span class="text-teal-600">Products</span></h1>
-      <p class="text-slate-500 max-w-2xl mx-auto">
-        Konabi’s products are pre-built, ready-to-deploy solutions designed to
-        accelerate your analytics and automation journey with minimal setup.
-      </p>
-    </section>
+<section class="px-4 mb-20 container text-center">
+  <h1 class="font-bold text-5xl text-slate-800 mb-6">
+    Our <span class="text-teal-600">Products</span>
+  </h1>
+  <p class="text-slate-500 max-w-2xl mx-auto mb-12">
+    Konabi’s products are <span class="font-semibold text-slate-700">pre-built, ready-to-deploy solutions</span> designed to jump-start your analytics and automation journey with minimal setup. We might already have exactly what you need, and if not, we’ll build it from the ground up.
+  </p>
 
-    <!-- Products Grid -->
-    <section class="container grid gap-8 sm:grid-cols-2 lg:grid-cols-3 px-4 mb-20">
-      <div class="p-6 bg-slate-200 rounded-xl shadow-md hover:opacity-90">
-        <h3 class="font-bold text-xl mb-2 text-teal-600">Audit Issue Tracker</h3>
-        <p class="text-slate-600 text-sm">
-          A Power BI solution for tracking, aging, and monitoring audit issues
-          across your organization.
-        </p>
-      </div>
-      <div class="p-6 bg-slate-200 rounded-xl shadow-md hover:opacity-90">
-        <h3 class="font-bold text-xl mb-2 text-teal-600">Risk Coverage Dashboard</h3>
-        <p class="text-slate-600 text-sm">
-          A finance and audit-focused dashboard providing real-time visibility
-          into risk coverage across business processes.
-        </p>
-      </div>
-      <div class="p-6 bg-slate-200 rounded-xl shadow-md hover:opacity-90">
-        <h3 class="font-bold text-xl mb-2 text-teal-600">Walkthrough Wizard</h3>
-        <p class="text-slate-600 text-sm">
-          An AI-driven assistant that helps auditors and business users complete
-          walkthroughs quickly and consistently.
-        </p>
-      </div>
-    </section>
+  <br>
+  <div class="grid gap-8 md:grid-cols-2 text-left max-w-4xl mx-auto">
+    <div>
+      <h3 class="text-xl font-semibold text-slate-800 mb-2">Power BI Dashboards</h3>
+      <p class="text-slate-600">
+        Deliver instant visibility into performance and KPIs with dashboards that turn raw data into actionable insights. Available for systems like Concur T&E, AuditBoard, Oracle HFM, ServiceNow, and more.
+      </p>
+    </div>
+
+    <br>
+    <div>
+      <h3 class="text-xl font-semibold text-slate-800 mb-2">Power Automate Flows</h3>
+      <p class="text-slate-600">
+        Streamline repetitive tasks, reduce errors, and cut costs with automation that integrates directly into your systems. Our readily available Power Automate flows tap into system and dashboard data to send emails and notifications on what matters most to you.
+      </p>
+    </div>
+
+    <br>
+    <div>
+      <h3 class="text-xl font-semibold text-slate-800 mb-2">Power Apps</h3>
+      <p class="text-slate-600">
+        Simplify data collection and process management with apps that are easy to use and tailored to your workflows. Our apps can also integrate with Power BI dashboards, providing a clean user interface for seamless execution of flows.
+      </p>
+    </div>
+
+    <br>
+    <div>
+      <h3 class="text-xl font-semibold text-slate-800 mb-2">Copilot Studio Agents</h3>
+      <p class="text-slate-600">
+        Put AI to work with conversational copilots that guide employees, assist customers, and connect securely to your business data. Our readily available bots are highly customizable and can be deployed to CoPilot Web or Teams.
+      </p>
+    </div>
+  </div>
+</section>
+
 
     <!-- Footer -->
     <footer class="px-4 py-7 text-slate-600 text-xs text-center">
       <hr class="opacity-40 pb-7" />
-      <p>&copy; <span id="footerDate"></span> Konabi Solutions</p>
+      <p>&copy; <span id="footerDate"></span> Konabi LLC</p>
     </footer>
 
     <script>

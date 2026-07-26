@@ -1,9 +1,12 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="scroll-smooth">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="color-scheme" content="light" />
     <title>Products | Konabi</title>
+    <meta name="description" content="Pre-built, ready-to-deploy Konabi products: Power BI dashboards, Power Automate flows, Power Apps, and Copilot Studio agents that jump-start your analytics and automation journey." />
+    <link rel="icon" type="image/png" href="img/favicon.png" />
     <link rel="stylesheet" href="css/main.css" />
     <script
       src="https://kit.fontawesome.com/fb89be9943.js"
@@ -11,20 +14,48 @@
     ></script>
   </head>
 
-  <body class="relative container mx-auto">
+  <body class="relative container mx-auto bg-white">
   <!-- Header -->
-  <header class="container flex justify-between items-center mb-20 px-4 py-2 pt-4">
+  <header class="container relative flex justify-between items-center mb-16 px-4 py-2 pt-4">
     <!-- Logo + Company Name -->
     <a href="index.html" class="flex items-center space-x-2">
-      <img class="w-10 hover:opacity-90" src="img/logo.png" alt="logo" />
+      <img class="w-10 hover:opacity-90" src="img/logo.png" alt="Konabi logo" />
       <h1 class="text-2xl font-bold">
         <span class="text-black">kona</span><span class="text-teal-600">bi</span>
       </h1>
     </a>
+
+    <nav class="flex items-center text-slate-700 text-xs font-medium">
+      <button
+        id="menu-toggle"
+        type="button"
+        aria-label="Toggle menu"
+        aria-expanded="false"
+        aria-controls="menu-panel"
+        class="sm:hidden mr-4 text-2xl"
+      >
+        <i class="fa-solid fa-bars"></i>
+      </button>
+      <ul id="menu-panel" class="hidden sm:flex">
+        <li><a class="block py-2 mr-6 hover:text-slate-600" href="index.html#about">About Us</a></li>
+        <li><a class="block py-2 mr-6 hover:text-slate-600" href="services.html">Services</a></li>
+        <li><a class="block py-2 mr-6 hover:text-slate-600" href="products.html">Products</a></li>
+        <li class="sm:hidden"><a class="block py-2 font-semibold text-teal-600" href="index.html#contact">Contact Us</a></li>
+      </ul>
+      <a
+        href="index.html#contact"
+        class="hidden sm:flex items-center rounded-full border border-slate-700 px-4 py-2 hover:bg-slate-700 hover:text-white transition-all duration-200 ease-in-out"
+      >
+        Contact Us
+        <i
+          class="fa-solid fa-angles-right animation-move-right relative top-03px"
+        ></i>
+      </a>
+    </nav>
   </header>
 
     <!-- Products Hero -->
-<section class="px-4 mb-20 container text-center">
+<section class="px-4 mb-16 container text-center">
   <h1 class="font-bold text-5xl text-slate-800 mb-6">
     Our <span class="text-teal-600">Products</span>
   </h1>
@@ -32,7 +63,6 @@
     Konabi’s products are <span class="font-semibold text-slate-700">pre-built, ready-to-deploy solutions</span> designed to jump-start your analytics and automation journey with minimal setup. We might already have exactly what you need, and if not, we’ll build it from the ground up.
   </p>
 
-  <br>
   <div class="grid gap-8 md:grid-cols-2 text-left max-w-4xl mx-auto">
     <div>
       <h3 class="text-xl font-semibold text-slate-800 mb-2">Power BI Dashboards</h3>
@@ -41,7 +71,6 @@
       </p>
     </div>
 
-    <br>
     <div>
       <h3 class="text-xl font-semibold text-slate-800 mb-2">Power Automate Flows</h3>
       <p class="text-slate-600">
@@ -49,7 +78,6 @@
       </p>
     </div>
 
-    <br>
     <div>
       <h3 class="text-xl font-semibold text-slate-800 mb-2">Power Apps</h3>
       <p class="text-slate-600">
@@ -57,11 +85,10 @@
       </p>
     </div>
 
-    <br>
     <div>
       <h3 class="text-xl font-semibold text-slate-800 mb-2">Copilot Studio Agents</h3>
       <p class="text-slate-600">
-        Put AI to work with conversational copilots that guide employees, assist customers, and connect securely to your business data. Our readily available bots are highly customizable and can be deployed to CoPilot Web or Teams.
+        Put AI to work with conversational copilots that guide employees, assist customers, and connect securely to your business data. Our readily available bots are highly customizable and can be deployed to Copilot Web or Teams.
       </p>
     </div>
   </div>
@@ -71,12 +98,19 @@
     <!-- Footer -->
     <footer class="px-4 py-7 text-slate-600 text-xs text-center">
       <hr class="opacity-40 pb-7" />
-      <p>&copy; <span id="footerDate"></span> Konabi LLC</p>
+      <p>&copy; <span id="footerDate"></span> Konabi LLC All Rights Reserved</p>
     </footer>
 
     <script>
       document.getElementById("footerDate").innerHTML =
         new Date().getFullYear();
+
+      const menuToggle = document.getElementById('menu-toggle')
+      const menuPanel = document.getElementById('menu-panel')
+      menuToggle.addEventListener('click', () => {
+        const isOpen = menuPanel.classList.toggle('hidden') === false
+        menuToggle.setAttribute('aria-expanded', isOpen)
+      })
     </script>
   </body>
 </html>

@@ -1,9 +1,12 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="scroll-smooth">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
+    <meta name="color-scheme" content="light" />
+    <title>Konabi | Analytics, Automation &amp; AI on Microsoft Power Platform</title>
+    <meta name="description" content="Konabi delivers low-cost analytics, automation, and AI solutions built on Microsoft 365 and the Power Platform: Power BI, Power Apps, Power Automate, and Copilot Studio." />
+    <link rel="icon" type="image/png" href="img/favicon.png" />
     <link rel="stylesheet" href="css/main.css" />
     <script
       src="https://kit.fontawesome.com/fb89be9943.js"
@@ -11,9 +14,9 @@
     ></script>
   </head>
 
-  <body class="relative container mx-auto">
+  <body class="relative bg-white">
   <!-- Header -->
-  <header class="container flex justify-between items-center mb-20 px-4 py-2 pt-4">
+  <header class="container mx-auto relative flex justify-between items-center mb-16 px-4 py-2 pt-4">
     <!-- Logo + Company Name -->
     <a href="index.html" class="flex items-center space-x-2">
       <img class="w-10 hover:opacity-90" src="img/logo.png" alt="logo" />
@@ -24,24 +27,34 @@
 
       <!-- Header Menu -->
       <nav class="flex items-center text-slate-700 text-xs font-medium">
-        <a class="mr-6 hover:text-slate-600 sm:hidden" href="#about"
-          >About Us</a
+        <button
+          id="menu-toggle"
+          type="button"
+          aria-label="Toggle menu"
+          aria-expanded="false"
+          aria-controls="menu-panel"
+          class="sm:hidden mr-4 text-2xl"
         >
-        <ul class="hidden sm:flex">
+          <i class="fa-solid fa-bars"></i>
+        </button>
+        <ul id="menu-panel" class="hidden sm:flex">
           <li>
-            <a class="mr-6 hover:text-slate-600" href="#about">About Us</a>
+            <a class="block py-2 mr-6 hover:text-slate-600" href="#about">About Us</a>
           </li>
           <li>
-            <a class="mr-6 hover:text-slate-600" href="services.html">Services</a>
+            <a class="block py-2 mr-6 hover:text-slate-600" href="services.html">Services</a>
           </li>
           <li>
-            <a class="mr-6 hover:text-slate-600" href="products.html">Products</a>
+            <a class="block py-2 mr-6 hover:text-slate-600" href="products.html">Products</a>
+          </li>
+          <li class="sm:hidden">
+            <a class="block py-2 font-semibold text-teal-600" href="#contact">Contact Us</a>
           </li>
         </ul>
 
         <a
           href="#contact"
-          class="rounded-full border border-slate-700 px-4 py-2 hover:bg-slate-700 hover:text-white transition-all duration-200 ease-in-out"
+          class="hidden sm:flex items-center rounded-full border border-slate-700 px-4 py-2 hover:bg-slate-700 hover:text-white transition-all duration-200 ease-in-out"
         >
           Contact Us
           <i
@@ -55,7 +68,7 @@
     <main>
       <!-- Hero -->
       <section
-        class="hero px-4 mb-20 container flex-col justify-between items-center sm:flex sm:flex-row xl:justify-center"
+        class="hero px-4 mb-16 container mx-auto flex-col justify-between items-center sm:flex sm:flex-row xl:justify-center"
       >
         <h1 class="font-bold text-5xl text-slate-800 max-w-sm mb-10 lg:mr-48">
         From Data <br> to Action <span class="text-teal-600">.</span>
@@ -69,9 +82,9 @@
       </section>
 
       <!-- Dark Section 1 -->
-      <section class="container justify-between bg-black md:flex">
+      <section class="justify-between bg-black md:flex">
         <div
-          class="flex justify-center items-center flex-col text-center py-20 px-20 w-full md:w-1/2"
+          class="flex justify-center items-center flex-col text-center py-16 px-8 w-full md:w-1/2"
         >
           <img
             class="w-24 mb-3 hover:opacity-90"
@@ -86,12 +99,12 @@
       </section>
 
       <!-- Divider -->
-      <div class="container h-16 bg-slate-200"></div>
+      <div class="h-16 bg-slate-200"></div>
 
       <!-- About Us Section -->
       <section
         id="about"
-        class="px-4 mt-40 mb-20 container w-full flex justify-center items-center"
+        class="px-4 mt-16 mb-16 container mx-auto w-full flex justify-center items-center"
       >
         <div>
           <h5 class="font-bold text-s text-teal-600 mb-3">About Us</h5>
@@ -107,25 +120,36 @@
       <!-- Call To Action -->
       <section
         id="contact"
-        class="bg-teal-600 px-4 py-20 mb-10 w-full justify-center sm:flex sm:justify-between xl:px-48"
+        class="bg-teal-600 py-16 mb-10"
       >
-        <form class="mb-10 max-w-sm mr-20 w-full sm:w-1/2">
+        <div class="container mx-auto px-4 w-full justify-center sm:flex sm:justify-between">
+        <form id="contact-form" class="mb-10 max-w-sm mr-20 w-full sm:w-1/2">
           <input
             class="py-2 bg-teal-600 text-teal-100 placeholder-teal-200 text-xs border-b border-teal-200 outline-none mb-6 w-full"
             type="text"
+            name="name"
             placeholder="Name"
+            aria-label="Name"
+            required
           />
           <input
             class="py-2 bg-teal-600 text-teal-100 placeholder-teal-200 text-xs border-b border-teal-200 outline-none mb-6 w-full"
             type="email"
+            name="email"
             placeholder="Email"
+            aria-label="Email"
+            required
           />
-          <input
+          <textarea
             class="py-2 bg-teal-600 text-teal-100 placeholder-teal-200 text-xs border-b border-teal-200 outline-none mb-6 w-full"
-            type="text"
+            name="message"
             placeholder="Message"
-          />
+            aria-label="Message"
+            rows="3"
+            required
+          ></textarea>
           <button
+            type="submit"
             class="px-4 py-3 bg-teal-50 text-slate-700 text-xs rounded-full border-none shadow-md shadow-teal-700 hover:bg-white transition-all duration-200 ease-in-out"
           >
             Send Message
@@ -139,8 +163,9 @@
             Let's talk. No pressure to commit.
           </h2>
           <p class="text-teal-200 text-xs max-w-xs leading-5">
-            
+            Tell us what you're working on and we'll get back to you within one business day.
           </p>
+        </div>
         </div>
       </section>
     </main>
@@ -150,6 +175,24 @@
     </footer>
     <script>
       document.getElementById('footerDate').innerHTML = new Date().getFullYear()
+
+      const menuToggle = document.getElementById('menu-toggle')
+      const menuPanel = document.getElementById('menu-panel')
+      menuToggle.addEventListener('click', () => {
+        const isOpen = menuPanel.classList.toggle('hidden') === false
+        menuToggle.setAttribute('aria-expanded', isOpen)
+      })
+
+      const contactForm = document.getElementById('contact-form')
+      contactForm.addEventListener('submit', (e) => {
+        e.preventDefault()
+        const name = contactForm.elements['name'].value
+        const email = contactForm.elements['email'].value
+        const message = contactForm.elements['message'].value
+        const subject = `New message from ${name}`
+        const body = `Name: ${name}\nEmail: ${email}\n\n${message}`
+        window.location.href = `mailto:daniel.lazo@konabisolutions.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`
+      })
     </script>
   </body>
 </html>

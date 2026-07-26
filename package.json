@@ -1,14 +1,13 @@
 {
-  "name": "tailwind-test",
+  "name": "konabisolutions.com",
   "version": "1.0.0",
-  "description": "",
-  "main": "index.js",
+  "description": "Konabi LLC marketing site",
   "scripts": {
     "build": "npx tailwindcss -i ./input.css -o ./css/main.css",
     "watch": "npx tailwindcss -i ./input.css -o ./css/main.css --watch"
   },
   "keywords": [],
-  "author": "Emanuele Favero",
+  "author": "Konabi LLC",
   "license": "MIT",
   "devDependencies": {
     "tailwindcss": "^3.2.4"

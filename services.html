@@ -1,30 +1,47 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="scroll-smooth">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="color-scheme" content="light" />
     <title>Services | Konabi</title>
+    <meta name="description" content="Konabi's Power Platform services: Power BI dashboards, Power Apps, Power Automate, and Copilot Studio agents, plus tailored training so your team can manage what we build." />
+    <link rel="icon" type="image/png" href="img/favicon.png" />
     <link rel="stylesheet" href="css/main.css" />
     <script
       src="https://kit.fontawesome.com/fb89be9943.js"
       crossorigin="anonymous"
     ></script>
   </head>
-  <body class="relative container mx-auto">
+  <body class="relative container mx-auto bg-white">
     <!-- Header (same as main page) -->
-    <header class="container flex justify-between mb-20 px-4 py-2 pt-4">
-      <a href="index.html">
-        <img class="w-10 hover:opacity-90" src="img/logo.png" alt="logo" />
+    <header class="container relative flex justify-between items-center mb-16 px-4 py-2 pt-4">
+      <a href="index.html" class="flex items-center space-x-2">
+        <img class="w-10 hover:opacity-90" src="img/logo.png" alt="Konabi logo" />
+        <h1 class="text-2xl font-bold">
+          <span class="text-black">kona</span><span class="text-teal-600">bi</span>
+        </h1>
       </a>
       <nav class="flex items-center text-slate-700 text-xs font-medium">
-        <ul class="hidden sm:flex">
-          <li><a class="mr-6 hover:text-slate-600" href="index.html">Home</a></li>
-          <li><a class="mr-6 hover:text-slate-600" href="services.html">Services</a></li>
-          <li><a class="mr-6 hover:text-slate-600" href="products.html">Products</a></li>
+        <button
+          id="menu-toggle"
+          type="button"
+          aria-label="Toggle menu"
+          aria-expanded="false"
+          aria-controls="menu-panel"
+          class="sm:hidden mr-4 text-2xl"
+        >
+          <i class="fa-solid fa-bars"></i>
+        </button>
+        <ul id="menu-panel" class="hidden sm:flex">
+          <li><a class="block py-2 mr-6 hover:text-slate-600" href="index.html#about">About Us</a></li>
+          <li><a class="block py-2 mr-6 hover:text-slate-600" href="services.html">Services</a></li>
+          <li><a class="block py-2 mr-6 hover:text-slate-600" href="products.html">Products</a></li>
+          <li class="sm:hidden"><a class="block py-2 font-semibold text-teal-600" href="index.html#contact">Contact Us</a></li>
         </ul>
         <a
-          href="#contact"
-          class="rounded-full border border-slate-700 px-4 py-2 hover:bg-slate-700 hover:text-white transition-all duration-200 ease-in-out"
+          href="index.html#contact"
+          class="hidden sm:flex items-center rounded-full border border-slate-700 px-4 py-2 hover:bg-slate-700 hover:text-white transition-all duration-200 ease-in-out"
         >
           Contact Us
           <i
@@ -35,7 +52,7 @@
     </header>
 
     <!-- Solutions Hero -->
-<section class="px-4 mb-20 container text-center">
+<section class="px-4 mb-16 container text-center">
   <h1 class="font-bold text-5xl text-slate-800 mb-6">
     Our <span class="text-teal-600">Services</span>
   </h1>
@@ -43,7 +60,6 @@
     At <span class="font-semibold text-slate-700">Konabi Solutions</span>, we use the Microsoft Power Platform to deliver practical, enterprise-ready solutions that help your business run smarter and faster. We also provide <span class="font-semibold text-slate-700">tailored training sessions</span> on Power BI, Power Apps, Power Automate, and Copilot Studio to ensure your team can confidently manage, adapt, and expand solutions long after deployment. Technology delivers the most value when people know how to use it. We are here to help.
   </p>
 
-  <BR>
   <div class="grid gap-8 md:grid-cols-2 text-left max-w-4xl mx-auto">
     <div>
       <h3 class="text-xl font-semibold text-slate-800 mb-2">Power BI – From Data to Decisions</h3>
@@ -52,7 +68,6 @@
       </p>
     </div>
 
-    <BR>
     <div>
       <h3 class="text-xl font-semibold text-slate-800 mb-2">Power Apps – Streamlined Processes</h3>
       <p class="text-slate-600">
@@ -60,7 +75,6 @@
       </p>
     </div>
 
-    <BR>
     <div>
       <h3 class="text-xl font-semibold text-slate-800 mb-2">Power Automate – Intelligent Automation</h3>
       <p class="text-slate-600">
@@ -68,7 +82,6 @@
       </p>
     </div>
 
-    <br>
     <div>
       <h3 class="text-xl font-semibold text-slate-800 mb-2">Copilot Studio – AI Agents for Business</h3>
       <p class="text-slate-600">
@@ -83,11 +96,18 @@
     <!-- Footer -->
     <footer class="px-4 py-7 text-slate-600 text-xs text-center">
       <hr class="opacity-40 pb-7" />
-      <p>&copy; <span id="footerDate"></span> Konabi LLC</p>
+      <p>&copy; <span id="footerDate"></span> Konabi LLC All Rights Reserved</p>
     </footer>
 
     <script>
       document.getElementById('footerDate').innerHTML = new Date().getFullYear()
+
+      const menuToggle = document.getElementById('menu-toggle')
+      const menuPanel = document.getElementById('menu-panel')
+      menuToggle.addEventListener('click', () => {
+        const isOpen = menuPanel.classList.toggle('hidden') === false
+        menuToggle.setAttribute('aria-expanded', isOpen)
+      })
     </script>
   </body>
 </html>
